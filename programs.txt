@@ -1,0 +1,876 @@
+ClrHome
+Lbl F
+Menu("Which program to run?","Mastermind",A,"Kunami Cheat Code",B,"Encryptor/Decryptor",C,"Worm Game",D,"Random Word Creator",E,"Quit",G)
+Lbl A
+ClrHome
+Output(1,1,"Mastermind is a guessing  game were the program     generates a random code of4 numbers each 1-6 and youtry to guess the code. As you guess the program willgive you information aboutyour guess."
+Pause 
+prgmMASTERMI
+ClrHome
+Goto F
+Lbl B
+ClrHome
+Output(1,1,"Kunami cheat code is a    program that does nothing until you enter the code  (Up Up Down Down Left     Right Left Right B A),    (Use arrow keys). This    program is designed to be implemented into larger   programs to allow players to enter a bug test mode."
+Pause 
+prgmCHEATY
+ClrHome
+Goto F
+Lbl C
+ClrHome
+Output(1,1,"Encryptor/Decryptor is a  program that allows you toencrypt a message into a  string of numbers and thendecrypt that string by    entering it into the      decryptor. The program is designed with two         calculators that both havethe program in mind."
+Pause 
+prgmENCRYPT
+ClrHome
+Goto F
+Lbl D
+ClrHome
+Output(1,1,"Worm is a game where you  control a worm with       adjustable length and can move it around the screen.It is important to note   that the longer you make  the worm, the laggier it  will be. Arrow keys to    move, Y= to quit.")
+Pause 
+prgmSNAKECLR
+ClrHome
+Goto F
+Lbl E
+ClrHome
+Output(1,1,"Random word creator is    fairly self explanatory,  it generates random words.You can influence the     length of the words but itis important to note that you only influence it and do not control the length.Lengths 1, 2, and 3 are   the most realistic."
+Pause 
+prgmRANDWORD
+ClrHome
+Goto F
+Lbl G
+ClrHome
+
+
+
+
+
+
+ClrHome
+0→R
+0→S
+0→T
+0→U
+0→V
+1→K
+0→H
+0→Q
+randInt(1,6)→X
+randInt(1,6)→Y
+randInt(1,6)→Z
+randInt(1,6)→θ
+X→E
+Y→F
+Z→I
+θ→J
+Menu("TEST MODE?","YES",Y,"NO",N)
+Lbl Y
+1→Q
+Lbl N
+{0}→L₁
+{}→L₂
+Lbl B
+E→X
+F→Y
+I→Z
+J→θ
+0→R
+0→S
+0→T
+0→U
+0→V
+If K>1
+Then
+augment(L₁,L₂)→L₂
+Lbl H
+Output(1,1,L₂)
+Output(10,1,"HISTORY")
+Pause 
+ClrHome
+End
+{0}→L₁
+Output(1,18,"ROUND ")
+Output(1,24,K)
+If Q=1
+Then
+Disp X
+Disp Y
+Disp Z
+Disp θ
+Else
+Disp " "
+Disp " "
+Disp " "
+Disp " "
+End
+Pause 
+ClrHome
+Lbl A
+Input "ENTER FOUR NUMBERS 1-6:    ",W
+abs(W)→W
+If W=111000111 and K>1
+Then
+ClrHome
+Goto H
+End
+If W≥10000 or W≤999
+Then
+ClrHome
+Output(1,1,"INPUT FOUR NUMBERS")
+Pause 
+ClrHome
+Goto A
+End
+int(W/1000)→A
+int(W/100)-10A→B
+int(W/10)-100A-10B→C
+int(W/1)-1000A-100B-10C→D
+If A>6 or A<1
+Then
+ClrHome
+Output(1,1,"ONLY INPUT NUMBERS BETWEEN ONE AND SIX")
+Pause 
+ClrHome
+Goto A
+End
+If B>6 or B<1
+Then
+ClrHome
+Output(1,1,"ONLY INPUT NUMBERS BETWEEN ONE AND SIX")
+Pause 
+ClrHome
+Goto A
+End
+If C>6 or C<1
+Then
+ClrHome
+Output(1,1,"ONLY INPUT NUMBERS BETWEEN ONE AND SIX")
+Pause 
+ClrHome
+Goto A
+End
+If D>6 or D<1
+Then
+ClrHome
+Output(1,1,"ONLY INPUT MUNBERS BETWEEN ONE AND SIX")
+Pause 
+ClrHome
+Goto A
+End
+ClrHome
+Output(1,18,"ROUND ")
+Output(1,24,K)
+Output(7,1,A)
+Output(8,1,B)
+Output(9,1,C)
+Output(10,1,D)
+Pause 
+If A=X
+Then
+V+1→V
+­1→R
+0→X
+0→A
+End
+If B=Y
+Then
+V+1→V
+­1→S
+0→Y
+0→B
+End
+If C=Z
+Then
+V+1→V
+­1→T
+0→Z
+0→C
+End
+If D=θ
+Then
+V+1→V
+­1→U
+0→θ
+0→D
+End
+If A=θ
+Then
+0→θ
+R+1→R
+Else
+If A=Z
+Then
+0→Z
+R+1→R
+Else
+If A=Y
+Then
+0→Y
+R+1→R
+End
+End
+End
+If B=X
+Then
+0→X
+S+1→S
+Else
+If B=θ
+Then
+0→θ
+S+1→S
+Else
+If B=Z
+Then
+0→Z
+S+1→S
+End
+End
+End
+If C=Y
+Then
+0→Y
+T+1→T
+Else
+If C=X
+Then
+0→X
+T+1→T
+Else
+If C=θ
+Then
+0→θ
+T+1→T
+End
+End
+End
+If D=X
+Then
+0→X
+U+1→U
+Else
+If D=Y
+Then
+0→Y
+U+1→U
+Else
+If D=Z
+Then
+0→Z
+U+1→U
+End
+End
+End
+If R<0
+0→R
+If S<0
+0→S
+If T<0
+0→T
+If U<0
+0→U
+R+S+T+U→U
+ClrHome
+Output(1,1,U)
+Output(1,2," RIGHT NUMBER,           WRONG PLACE")
+Output(4,1,V)
+Output(4,2," RIGHT NUMBER            RIGHT PLACE")
+{W,U,V}→L₁
+If V=4
+Then
+ClrHome
+Output(4,8,"YOU WIN")
+Output(5,1,K)
+100→K
+1→H
+End
+Pause 
+ClrHome
+K+1→K
+If K<11
+Goto B
+ClrHome
+If H=0
+Then
+Output(4,3,"YOU ARE A LOSER")
+Output(5,1,"THE NUMBER WAS: ")
+Output(5,16,E)
+Output(5,17,F)
+Output(5,18,I)
+Output(5,19,J)
+Pause 
+End
+ClrHome
+Output(4,4,"THANKS FOR PLAYING")
+Pause 
+
+
+
+
+
+
+
+
+ClrHome
+0→θ
+0→A
+0→C
+Output(1,2,"IF TIMER REACHES 0, CODE      PROGRESS RESETS")
+Pause 
+Lbl C
+ClrHome
+99→H
+Repeat A≠0
+Output(1,1,H)
+getKey→A
+H-1→H
+If H=0
+Then
+0→C
+Goto C
+End
+End
+If A=25 and C=0
+Then
+1→C
+Goto A
+End
+If A=25 and C=1
+Then
+2→C
+Goto A
+End
+If A=34 and C=2
+Then
+3→C
+Goto A
+End
+If A=34 and C=3
+Then
+4→C
+Goto A
+End
+If A=24 and C=4
+Then
+5→C
+Goto A
+End
+If A=26 and C=5
+Then
+6→C
+Goto A
+End
+If A=24 and C=6
+Then
+7→C
+Goto A
+End
+If A=26 and C=7
+Then
+8→C
+Goto A
+End
+If A=42 and C=8
+Then
+9→C
+Goto A
+End
+If A=41 and C=9
+Then
+0→C
+Goto B
+End
+0→C
+Lbl A
+0→A
+Goto C
+Lbl B
+Output(1,1,"YOU WIN")
+Pause 
+
+
+
+
+
+
+
+
+Lbl S
+ClrHome
+Menu("Encrypt or Decrypt?","Encrypt",O,"Decrypt",P,"Quit",Q)
+Lbl O
+ClrHome
+Output(1,1,"Type in your message as normal. The program will only decrypt keys with alpha functions (A-Z and special characters). When you have entered your message, press enter. Record the rusulting numbers.")
+Pause 
+ClrHome
+ClrList L₁
+Lbl R
+randInt(1,20)→A
+randInt(1,20)→B
+randInt(1,20)→C
+If A=0 or B=0 or C=0
+Goto R
+A→L₁(1)
+B→L₁(2)
+C→L₁(3)
+Repeat θ=105
+0→θ
+While θ=0
+getKey→θ
+End
+θ→L₁(dim(L₁)+1)
+ClrHome
+End
+ClrHome
+For(D,4,dim(L₁))
+L₁(D)*L₁(1)→L₁(D)
+L₁(D)+L₁(2)→L₁(D)
+L₁(D)-L₁(3)→L₁(D)
+End
+Output(1,1,L₁)
+Pause 
+Goto S
+Lbl P
+ClrHome
+Output(1,1,"To decrypt enter the numbers in the encrypted message one by one and enter 0 when done."
+Pause 
+ClrHome
+ClrList L₁
+1→A
+1→B
+Repeat A=0
+Input " ",A
+A→L₁(B)
+B+1→B
+End
+For(D,4,dim(L₁))
+L₁(D)+(L₁(3))→L₁(D)
+L₁(D)-(L₁(2))→L₁(D)
+L₁(D)/(L₁(1))→L₁(D)
+End
+"-"→Str1
+For(Q,1,dim(L₁))
+If L₁(Q)=41
+Str1+"A"→Str1
+If L₁(Q)=42
+Str1+"B"→Str1
+If L₁(Q)=43
+Str1+"C"→Str1
+If L₁(Q)=51
+Str1+"D"→Str1
+If L₁(Q)=52
+Str1+"E"→Str1
+If L₁(Q)=53
+Str1+"F"→Str1
+If L₁(Q)=54
+Str1+"G"→Str1
+If L₁(Q)=55
+Str1+"H"→Str1
+If L₁(Q)=61
+Str1+"I"→Str1
+If L₁(Q)=62
+Str1+"J"→Str1
+If L₁(Q)=63
+Str1+"K"→Str1
+If L₁(Q)=64
+Str1+"L"→Str1
+If L₁(Q)=65
+Str1+"M"→Str1
+If L₁(Q)=71
+Str1+"N"→Str1
+If L₁(Q)=72
+Str1+"O"→Str1
+If L₁(Q)=73
+Str1+"P"→Str1
+If L₁(Q)=74
+Str1+"Q"→Str1
+If L₁(Q)=75
+Str1+"R"→Str1
+If L₁(Q)=81
+Str1+"S"→Str1
+If L₁(Q)=82
+Str1+"T"→Str1
+If L₁(Q)=83
+Str1+"U"→Str1
+If L₁(Q)=84
+Str1+"V"→Str1
+If L₁(Q)=85
+Str1+"W"→Str1
+If L₁(Q)=91
+Str1+"X"→Str1
+If L₁(Q)=92
+Str1+"Y"→Str1
+If L₁(Q)=93
+Str1+"Z"→Str1
+If L₁(Q)=94
+Str1+"θ"→Str1
+If L₁(Q)=95
+Str1+"""→Str1
+If L₁(Q)=102
+Str1+" "→Str1
+If L₁(Q)=103
+Str1+":"→Str1
+If L₁(Q)=104
+Str1+"?"→Str1
+End
+ClrHome
+Output(1,1,Str1)
+Pause 
+Goto S
+Lbl Q
+
+
+
+
+
+
+
+
+
+
+FnOff 
+ClrDraw
+Lbl L
+ClrHome
+Input "LENGTH OF WORM? (PIXELS)   ",θ
+If θ>260
+Then
+ClrHome
+Output(1,1,"TOO BIG")
+Pause 
+Goto L
+End
+If θ<1
+Then
+ClrHome
+Output(1,1,"TOO SMALL")
+Pause 
+Goto L
+End
+BackgroundOn BLACK
+ClrList L₁
+For(P,1,θ)
+Pxl-On(1,P,ORANGE)
+End
+For(L,1,θ*2)
+If remainder(L,2)=0
+L/2→L₁(L)
+If remainder(L,2)≠0
+1→L₁(L)
+End
+0→R
+Lbl R
+Lbl A
+0→A
+While A=0
+getKey→A
+End
+If A=11
+Goto C
+If A≠24 and A≠25 and A≠26 and A≠34
+Goto A
+If A=24
+Then
+0→B
+­1→C
+Goto B
+End
+If A=25
+Then
+­1→B
+0→C
+Goto B
+End
+If A=26
+Then
+0→B
+1→C
+Goto B
+End
+If A=34
+Then
+1→B
+0→C
+Goto B
+End
+Lbl B
+Pxl-Off(L₁(1),L₁(2))
+For(S,1,dim(L₁)-2)
+L₁(S+2)→L₁(S)
+End
+L₁(dim(L₁)-1)+B→L₁(dim(L₁)-1)
+L₁(dim(L₁))+C→L₁(dim(L₁))
+If L₁(dim(L₁))<0
+264→L₁(dim(L₁))
+If L₁(dim(L₁)-1)<0
+164→L₁(dim(L₁)-1)
+If L₁(dim(L₁))>264
+0→L₁(dim(L₁))
+If L₁(dim(L₁)-1)>164
+0→L₁(dim(L₁)-1)
+Pxl-On(L₁(dim(L₁)-1),L₁(dim(L₁)),ORANGE)
+End
+Goto R
+Lbl C
+ClrHome
+Output(1,1,"GOODBYE")
+Pause 
+
+
+
+
+
+
+
+
+
+
+
+Lbl W
+ClrHome
+" "→Str1
+Lbl A
+Input "HOW LONG? ",A
+If A<1
+Goto A
+0→V
+randInt(0,1)→S
+For(B,1,A)
+If V=0 and S=1
+Then
+randInt(0,1)→G
+If G=0
+Then
+randInt(1,37)→C
+If C=1
+Str1+"BL"→Str1
+If C=2
+Str1+"BR"→Str1
+If C=3
+Str1+"CH"→Str1
+If C=4
+Str1+"CL"→Str1
+If C=5
+Str1+"CR"→Str1
+If C=6
+Str1+"DR"→Str1
+If C=7
+Str1+"FL"→Str1
+If C=9
+Str1+"FR"→Str1
+If C=10
+Str1+"GL"→Str1
+If C=11
+Str1+"GR"→Str1
+If C=12
+Str1+"PL"→Str1
+If C=13
+Str1+"PR"→Str1
+If C=14
+Str1+"SC"→Str1
+If C=15
+Str1+"SH"→Str1
+If C=16
+Str1+"SK"→Str1
+If C=17
+Str1+"SL"→Str1
+If C=19
+Str1+"SM"→Str1
+If C=20
+Str1+"SN"→Str1
+If C=21
+Str1+"SP"→Str1
+If C=22
+Str1+"ST"→Str1
+If C=23
+Str1+"SW"→Str1
+If C=24
+Str1+"TH"→Str1
+If C=25
+Str1+"TW"→Str1
+If C=26
+Str1+"WH"→Str1
+If C=27
+Str1+"WR"→Str1
+If C=29
+Str1+"SCH"→Str1
+If C=30
+Str1+"SCR"→Str1
+If C=31
+Str1+"SHR"→Str1
+If C=32
+Str1+"SPH"→Str1
+If C=33
+Str1+"SPL"→Str1
+If C=34
+Str1+"SPR"→Str1
+If C=35
+Str1+"SQU"→Str1
+If C=36
+Str1+"STR"→Str1
+If C=37
+Str1+"THR"→Str1
+End
+If G=1
+Then
+For(J,1,randInt(1,2))
+randInt(38,57)→C
+If C=38
+Str1+"B"→Str1
+If C=39
+Str1+"C"→Str1
+If C=40
+Str1+"D"→Str1
+If C=41
+Str1+"F"→Str1
+If C=42
+Str1+"G"→Str1
+If C=43
+Str1+"H"→Str1
+If C=44
+Str1+"J"→Str1
+If C=45
+Str1+"K"→Str1
+If C=46
+Str1+"L"→Str1
+If C=47
+Str1+"M"→Str1
+If C=48
+Str1+"N"→Str1
+If C=49
+Str1+"P"→Str1
+If C=50
+Then
+Str1+"QU"→Str1
+Goto K
+End
+If C=51
+Str1+"R"→Str1
+If C=52
+Str1+"S"→Str1
+If C=53
+Str1+"T"→Str1
+If C=54
+Str1+"V"→Str1
+If C=55
+Str1+"W"→Str1
+If C=56 and J=1
+Then
+Str1+"EX"→Str1
+Goto K
+End
+If C=56 and J≠1
+Then
+Str1+"X"→Str1
+Goto K
+End
+If C=57
+Str1+"Z"→Str1
+End
+Lbl K
+End
+End
+randInt(1,2)→E
+If E=2 and A=B
+Goto E
+randInt(1,40)→C
+If C=1
+Str1+"A"→Str1
+If C=2
+Str1+"E"→Str1
+If C=3
+Str1+"I"→Str1
+If C=4
+Str1+"O"→Str1
+If C=5
+Str1+"U"→Str1
+If C=6
+Str1+"AI"→Str1
+If C=7
+Str1+"AY"→Str1
+If C=8
+Str1+"AU"→Str1
+If C=9
+Str1+"AW"→Str1
+If C=10
+Str1+"AUGH"→Str1
+If C=11
+Str1+"WA"→Str1
+If C=12
+Str1+"ALL"→Str1
+If C=13
+Str1+"Y"→Str1
+If C=14
+Str1+"ALK"→Str1
+If C=15
+Str1+"ALM"→Str1
+If C=16
+Str1+"ALT"→Str1
+If C=17
+Str1+"EE"→Str1
+If C=18
+Str1+"EA"→Str1
+If C=19
+Str1+"EU"→Str1
+If C=20
+Str1+"EW"→Str1
+If C=21
+Str1+"EI"→Str1
+If C=22
+Str1+"EY"→Str1
+If C=23
+Str1+"EIGH"→Str1
+If C=24
+Str1+"IE"→Str1
+If C=25
+Str1+"IGH"→Str1
+If C=26
+Str1+"IGN"→Str1
+If C=27
+Str1+"IND"→Str1
+If C=28
+Str1+"OO"→Str1
+If C=29
+Str1+"OA"→Str1
+If C=30
+Str1+"OE"→Str1
+If C=31
+Str1+"OI"→Str1
+If C=32
+Str1+"OY"→Str1
+If C=33
+Str1+"OLD"→Str1
+If C=34
+Str1+"OLK"→Str1
+If C=35
+Str1+"OLT"→Str1
+If C=36
+Str1+"OLL"→Str1
+If C=37
+Str1+"OST"→Str1
+If C=38
+Str1+"OW"→Str1
+If C=39
+Str1+"UE"→Str1
+If C=40
+Str1+"UI"→Str1
+0→V
+If C=10 or C=12 or C=14 or C=15 or C=16 or C=23 or C=25 or C=26 or C=27 or C=33 or C=34 or C=35 or C=36 or C=37
+1→V
+1→S
+End
+Lbl E
+ClrHome
+Output(1,1,Str1)
+Pause 
+ClrHome
+Menu("ADD TO FAVORITES?","NO",U,"YES",T)
+Lbl T
+Str1+Str0→Str0
+Lbl U
+Menu("RANDOM WORD CREATOR:","VIEW FAVORITES",V,"GENERATE ANOTHER WORD",W,"QUIT",X)
+Lbl V
+ClrHome
+Output(1,1,Str0)
+Pause 
+ClrHome
+Goto U
+Lbl X
